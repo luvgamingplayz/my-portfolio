@@ -1,0 +1,170 @@
+:root {
+  --bg-color: #f9f9f9;
+  --text-color: #222;
+  --accent: #00bcd4;
+  --footer-bg: #111;
+}
+
+body.dark {
+  --bg-color: #111;
+  --text-color: #eee;
+  --footer-bg: #222;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0 20px;
+  animation: fadeIn 1s ease;
+  transition: background 0.3s, color 0.3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+header {
+  background: #000;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+.hero, .content {
+  padding: 60px 0;
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero h2 {
+  font-size: 3rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+
+.project {
+  background: white;
+  color: #000;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+input, textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #0097a7;
+}
+
+footer {
+  background: var(--footer-bg);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 60px;
+  transition: background 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin: 10px 0;
+    font-size: 1.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  form {
+    width: 100%;
+  }
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  user-select: none;
+  transition: transform 0.2s;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
